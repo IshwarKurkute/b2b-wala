@@ -20,6 +20,12 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
 
+    driverId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Driver",
+        default: null
+    },
+
     quantity: {
         type: Number,
         required: true
@@ -41,7 +47,7 @@ const orderSchema = new mongoose.Schema({
             "Pending",
             "Accepted",
             "Rejected",
-            "Packed",
+            "Driver Assigned",
             "Out For Delivery",
             "Delivered"
         ],

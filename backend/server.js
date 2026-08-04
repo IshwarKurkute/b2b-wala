@@ -7,6 +7,7 @@ const wholesalerRoutes = require("./routes/wholesalerRoutes");
 const productRoutes = require("./routes/productRoutes");
 const retailerRoutes = require("./routes/retailerRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const driverRoutes = require("./routes/driverRoutes");
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use("/api/wholesaler", wholesalerRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/retailers", retailerRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/drivers", driverRoutes);
 
 // Test Route
 app.get("/", (req, res) => {

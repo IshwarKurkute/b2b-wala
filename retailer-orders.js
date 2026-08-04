@@ -1,5 +1,8 @@
 const retailer = JSON.parse(localStorage.getItem("retailer"));
 
+console.log("Retailer Object:", retailer);
+console.log("Retailer ID:", retailer ? retailer._id : null);
+
 if (!retailer) {
 
     alert("Please Login First");
@@ -11,11 +14,15 @@ async function loadOrders() {
 
     try {
 
-        const response = await fetch(
-            `https://b2b-wala.onrender.com/api/orders/retailer/${retailer._id}`
-        );
+        const url = `https://b2b-wala.onrender.com/api/orders/retailer/${retailer._id}`;
+
+        console.log("Request URL:", url);
+
+        const response = await fetch(url);
 
         const data = await response.json();
+
+        console.log("API Response:", data);
 
         const table = document.getElementById("orderTable");
 
