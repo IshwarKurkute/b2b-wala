@@ -91,12 +91,88 @@ const getOrdersByWholesaler = async (req, res) => {
 };
 
 // ==========================
+// Accept Order
+// ==========================
+
+const acceptOrder = async (req, res) => {
+
+    try {
+
+        await Order.findByIdAndUpdate(
+            req.params.id,
+            {
+                status: "Accepted"
+            }
+        );
+
+        res.json({
+
+            success: true,
+            message: "Order Accepted"
+
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
+
+// ==========================
+// Reject Order
+// ==========================
+
+const rejectOrder = async (req, res) => {
+
+    try {
+
+        await Order.findByIdAndUpdate(
+            req.params.id,
+            {
+                status: "Rejected"
+            }
+        );
+
+        res.json({
+
+            success: true,
+            message: "Order Rejected"
+
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
+
+// ==========================
 // Exports
 // ==========================
 
 module.exports = {
 
     placeOrder,
-    getOrdersByWholesaler
+    getOrdersByWholesaler,
+    acceptOrder,
+    rejectOrder
 
 };
