@@ -1,0 +1,26 @@
+{
+  "name": "b2b-wala",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "live-server --port=5500 --no-browser",
+    "server": "nodemon backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.14"
+  }
+}

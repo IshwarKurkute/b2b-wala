@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wholesaler Login</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>B2B Wala</h1>
+
+<h2>Wholesaler Login</h2>
+
+<input
+type="text"
+id="mobile"
+placeholder="Enter Mobile Number"
+>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+>
+
+<button onclick="loginWholesaler()">
+Login
+</button>
+
+<br><br>
+
+<a href="wholesaler-register.html">
+Create New Account
+</a>
+
+</div>
+
+<script>
+
+async function loginWholesaler(){
+
+const mobile=document.getElementById("mobile").value;
+const password=document.getElementById("password").value;
+
+if(mobile==="" || password===""){
+alert("Please Fill All Fields");
+return;
+}
+
+try{
+
+const response=await fetch("http://localhost:5000/api/wholesaler/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+mobile,
+password
+})
+
+});
+
+const data=await response.json();
+
+alert(data.message);
+
+if(data.success){
+
+// Save Full Wholesaler
+localStorage.setItem(
+"wholesaler",
+JSON.stringify(data.wholesaler)
+);
+
+// Save Only ID
+localStorage.setItem(
+"wholesalerId",
+data.wholesaler._id
+);
+
+window.location.href="wholesaler-dashboard.html";
+
+}
+
+}catch(error){
+
+console.log(error);
+
+alert("Server Error");
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

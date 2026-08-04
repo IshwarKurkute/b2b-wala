@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+p{
+    color: gray;
+    margin-bottom: 25px;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #084298;
+}
+button:hover{
+    background:#084298;
+}
+
+/* ---------- Login Page ---------- */
+
+h2{
+    margin-top:10px;
+    margin-bottom:25px;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+a{
+    display:block;
+    margin-top:15px;
+    color:#0d6efd;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}

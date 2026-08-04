@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wholesaler Register</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>B2B Wala</h1>
+
+<h2>Wholesaler Registration</h2>
+
+<input type="text" id="shopName" placeholder="Company Name">
+
+<input type="text" id="name" placeholder="Owner Name">
+
+<input type="text" id="mobile" placeholder="Mobile Number">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+<input type="text" id="gst" placeholder="GST Number">
+
+<input type="text" id="address" placeholder="Address">
+
+<button onclick="registerWholesaler()">
+Register
+</button>
+
+<br><br>
+
+<a href="wholesaler-login.html">
+Already have an account? Login
+</a>
+
+</div>
+
+<script>
+
+async function registerWholesaler(){
+
+const shopName=document.getElementById("shopName").value;
+const name=document.getElementById("name").value;
+const mobile=document.getElementById("mobile").value;
+const password=document.getElementById("password").value;
+const confirmPassword=document.getElementById("confirmPassword").value;
+const address=document.getElementById("address").value;
+
+if(password!==confirmPassword){
+alert("Passwords do not match");
+return;
+}
+
+const response=await fetch("http://localhost:5000/api/wholesaler/register",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name,
+mobile,
+shopName,
+address,
+password
+})
+
+});
+
+const data=await response.json();
+
+alert(data.message);
+
+}
+
+</script>
+
+</body>
+</html>
