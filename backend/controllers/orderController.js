@@ -19,24 +19,20 @@ const placeOrder = async (req, res) => {
         const totalAmount = quantity * price;
 
         const order = new Order({
-
             wholesalerId,
             retailerId,
             productId,
             quantity,
             price,
             totalAmount
-
         });
 
         await order.save();
 
         res.status(201).json({
-
             success: true,
             message: "Order Placed Successfully",
             order
-
         });
 
     } catch (error) {
@@ -44,10 +40,8 @@ const placeOrder = async (req, res) => {
         console.log(error);
 
         res.status(500).json({
-
             success: false,
             message: "Server Error"
-
         });
 
     }
@@ -55,7 +49,7 @@ const placeOrder = async (req, res) => {
 };
 
 // ==========================
-// Get Orders By Wholesaler
+// Wholesaler Orders
 // ==========================
 
 const getOrdersByWholesaler = async (req, res) => {
@@ -68,11 +62,9 @@ const getOrdersByWholesaler = async (req, res) => {
         .populate("productId")
         .populate("retailerId");
 
-        res.status(200).json({
-
+        res.json({
             success: true,
             orders
-
         });
 
     } catch (error) {
@@ -80,10 +72,39 @@ const getOrdersByWholesaler = async (req, res) => {
         console.log(error);
 
         res.status(500).json({
-
             success: false,
             message: "Server Error"
+        });
 
+    }
+
+};
+
+// ==========================
+// Retailer Orders
+// ==========================
+
+const getOrdersByRetailer = async (req, res) => {
+
+    try {
+
+        const orders = await Order.find({
+            retailerId: req.params.id
+        })
+        .populate("productId");
+
+        res.json({
+            success: true,
+            orders
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
         });
 
     }
@@ -106,10 +127,8 @@ const acceptOrder = async (req, res) => {
         );
 
         res.json({
-
             success: true,
             message: "Order Accepted"
-
         });
 
     } catch (error) {
@@ -117,10 +136,8 @@ const acceptOrder = async (req, res) => {
         console.log(error);
 
         res.status(500).json({
-
             success: false,
             message: "Server Error"
-
         });
 
     }
@@ -143,10 +160,8 @@ const rejectOrder = async (req, res) => {
         );
 
         res.json({
-
             success: true,
             message: "Order Rejected"
-
         });
 
     } catch (error) {
@@ -154,25 +169,18 @@ const rejectOrder = async (req, res) => {
         console.log(error);
 
         res.status(500).json({
-
             success: false,
             message: "Server Error"
-
         });
 
     }
 
 };
 
-// ==========================
-// Exports
-// ==========================
-
 module.exports = {
-
     placeOrder,
     getOrdersByWholesaler,
+    getOrdersByRetailer,
     acceptOrder,
     rejectOrder
-
 };
