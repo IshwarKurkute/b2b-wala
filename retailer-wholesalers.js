@@ -2,7 +2,7 @@ async function loadWholesalers() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/wholesaler/all");
+        const response = await fetch("https://b2b-wala.onrender.com/api/wholesaler/all");
 
         const data = await response.json();
 

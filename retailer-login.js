@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/retailers/login", {
+        const response = await fetch("https://b2b-wala.onrender.com/api/retailers/login", {
 
             method: "POST",
 

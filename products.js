@@ -20,7 +20,7 @@ async function loadProducts() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/products");
+        const response = await fetch("https://b2b-wala.onrender.com/api/products");
 
         const data = await response.json();
 
@@ -34,7 +34,7 @@ async function loadProducts() {
 
                 <td>
                     <img
-                    src="http://localhost:5000/uploads/${product.image}"
+                    src="https://b2b-wala.onrender.com/uploads/${product.image}"
                     width="60"
                     height="60">
                 </td>
@@ -132,7 +132,7 @@ productForm.addEventListener("submit", async (e) => {
         formData.append("unit", "Piece");
 
         const response = await fetch(
-            "http://localhost:5000/api/products/add",
+            "https://b2b-wala.onrender.com/api/products/add",
             {
                 method: "POST",
                 body: formData

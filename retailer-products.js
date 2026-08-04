@@ -6,7 +6,7 @@ async function loadProducts() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/products/wholesaler/${wholesalerId}`
+            `https://b2b-wala.onrender.com/api/products/wholesaler/${wholesalerId}`
         );
 
         const data = await response.json();
@@ -35,7 +35,7 @@ async function loadProducts() {
             ">
 
                 <img
-    src="http://localhost:5000/uploads/${product.image}"
+    src="https://b2b-wala.onrender.com/uploads/${product.image}"
     style="
         width:120px;
         height:120px;
@@ -107,7 +107,7 @@ async function placeOrder(productId, price) {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/orders/place",
+            "https://b2b-wala.onrender.com/api/orders/place",
             {
 
                 method: "POST",
