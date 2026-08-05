@@ -6,7 +6,8 @@ const {
     getOrdersByWholesaler,
     getOrdersByRetailer,
     acceptOrder,
-    rejectOrder
+    rejectOrder,
+    assignDriver
 } = require("../controllers/orderController");
 
 // Place Order
@@ -18,10 +19,13 @@ router.get("/wholesaler/:id", getOrdersByWholesaler);
 // Retailer Orders
 router.get("/retailer/:id", getOrdersByRetailer);
 
-// Accept
+// Accept Order
 router.put("/accept/:id", acceptOrder);
 
-// Reject
+// Reject Order
 router.put("/reject/:id", rejectOrder);
+
+// Assign Driver
+router.put("/assign-driver/:id", assignDriver);
 
 module.exports = router;

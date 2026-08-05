@@ -49,7 +49,7 @@ const placeOrder = async (req, res) => {
 };
 
 // ==========================
-// Wholesaler Orders
+// Get Orders By Wholesaler
 // ==========================
 
 const getOrdersByWholesaler = async (req, res) => {
@@ -60,7 +60,8 @@ const getOrdersByWholesaler = async (req, res) => {
             wholesalerId: req.params.id
         })
         .populate("productId")
-        .populate("retailerId");
+        .populate("retailerId")
+        .populate("driverId");
 
         res.json({
             success: true,
@@ -81,7 +82,7 @@ const getOrdersByWholesaler = async (req, res) => {
 };
 
 // ==========================
-// Retailer Orders
+// Get Orders By Retailer
 // ==========================
 
 const getOrdersByRetailer = async (req, res) => {
@@ -91,7 +92,8 @@ const getOrdersByRetailer = async (req, res) => {
         const orders = await Order.find({
             retailerId: req.params.id
         })
-        .populate("productId");
+        .populate("productId")
+        .populate("driverId");
 
         res.json({
             success: true,
@@ -177,10 +179,49 @@ const rejectOrder = async (req, res) => {
 
 };
 
+// ==========================
+// Assign Driver
+// ==========================
+
+const assignDriver = async (req, res) => {
+
+    try {
+
+        const { driverId } = req.body;
+
+        await Order.findByIdAndUpdate(
+            req.params.id,
+            {
+                driverId,
+                status: "Driver Assigned"
+            }
+        );
+
+        res.json({
+            success: true,
+            message: "Driver Assigned Successfully"
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+};
+
 module.exports = {
+
     placeOrder,
     getOrdersByWholesaler,
     getOrdersByRetailer,
     acceptOrder,
-    rejectOrder
+    rejectOrder,
+    assignDriver
+
 };
