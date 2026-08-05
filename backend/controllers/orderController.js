@@ -214,7 +214,89 @@ const assignDriver = async (req, res) => {
     }
 
 };
+// ==========================
+// Driver Orders
+// ==========================
 
+const getOrdersByDriver = async (req, res) => {
+
+    try {
+
+        const orders = await Order.find({
+
+            driverId: req.params.id
+
+        })
+        .populate("productId")
+        .populate("retailerId");
+
+        res.json({
+
+            success: true,
+            orders
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
+
+// ==========================
+// Out For Delivery
+// ==========================
+
+const outForDelivery = async (req, res) => {
+
+    try {
+
+        await Order.findByIdAndUpdate(
+
+            req.params.id,
+
+            {
+
+                status: "Out For Delivery"
+
+            }
+
+        );
+
+        res.json({
+
+            success: true,
+            message: "Order Out For Delivery"
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
 module.exports = {
 
     placeOrder,
@@ -222,6 +304,8 @@ module.exports = {
     getOrdersByRetailer,
     acceptOrder,
     rejectOrder,
-    assignDriver
+    assignDriver,
+    getOrdersByDriver,
+    outForDelivery
 
 };
