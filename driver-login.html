@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver login</title>
+
+    <title>Driver Login</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>B2B Wala</h1>
-        <h2>Driver Login</h2>
-        <input type="text" placeholder="Enter Mobile Number">
 
-        <input type="password" placeholder="Enter Password">
+<div class="container">
 
-    <button onclick="location.href='driver-dashboard.html'">
-    Login
-</button>
-    </div>
-    
+    <h1>B2B Wala</h1>
+
+    <h2>Driver Login</h2>
+
+    <form id="loginForm">
+
+        <input
+            type="text"
+            id="mobile"
+            placeholder="Enter Mobile Number"
+            required
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+<script src="driver-login.js"></script>
+
 </body>
+
 </html>
