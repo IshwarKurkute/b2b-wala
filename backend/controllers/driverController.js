@@ -104,10 +104,69 @@ const getDrivers = async (req, res) => {
     }
 
 };
+// ==========================
+// Driver Login
+// ==========================
 
+const loginDriver = async (req, res) => {
+
+    try {
+
+        const { mobile, password } = req.body;
+
+        const driver = await Driver.findOne({ mobile });
+
+        if (!driver) {
+
+            return res.status(400).json({
+
+                success: false,
+                message: "Driver Not Found"
+
+            });
+
+        }
+
+        if (driver.password !== password) {
+
+            return res.status(400).json({
+
+                success: false,
+                message: "Wrong Password"
+
+            });
+
+        }
+
+        res.json({
+
+            success: true,
+            message: "Login Successful",
+            driver
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
 module.exports = {
 
     registerDriver,
-    getDrivers
+    getDrivers,
+    loginDriver,
+
 
 };
