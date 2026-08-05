@@ -41,6 +41,12 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
 
+    // Delivery OTP
+    deliveryOTP: {
+        type: String,
+        default: null
+    },
+
     status: {
         type: String,
         enum: [

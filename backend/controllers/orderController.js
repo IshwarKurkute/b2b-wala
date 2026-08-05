@@ -262,22 +262,90 @@ const outForDelivery = async (req, res) => {
 
     try {
 
-        await Order.findByIdAndUpdate(
+        const otp = Math.floor(1000 + Math.random() * 9000);
 
-            req.params.id,
 
-            {
+await Order.findByIdAndUpdate(
 
-                status: "Out For Delivery"
+    req.params.id,
 
-            }
+    {
 
-        );
+        status: "Out For Delivery",
+        deliveryOTP: otp
+
+    }
+
+);
 
         res.json({
 
             success: true,
             message: "Order Out For Delivery"
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+};
+// ==========================
+// Verify Delivery OTP
+// ==========================
+
+const verifyOTP = async (req, res) => {
+
+    try {
+
+        const { otp } = req.body;
+
+        const order = await Order.findById(req.params.id);
+
+        if (!order) {
+
+            return res.status(404).json({
+
+                success: false,
+                message: "Order Not Found"
+
+            });
+
+        }
+
+
+        if (String(order.deliveryOTP) !== String(otp)) {
+
+            return res.json({
+
+                success: false,
+                message: "Wrong OTP"
+
+            });
+
+        }
+
+
+        order.status = "Delivered";
+
+        await order.save();
+
+
+        res.json({
+
+            success: true,
+            message: "Order Delivered Successfully"
 
         });
 
@@ -306,6 +374,7 @@ module.exports = {
     rejectOrder,
     assignDriver,
     getOrdersByDriver,
-    outForDelivery
+    outForDelivery,
+    verifyOTP
 
 };

@@ -10,7 +10,8 @@ const {
     rejectOrder,
     assignDriver,
     getOrdersByDriver,
-    outForDelivery
+    outForDelivery,
+    verifyOTP
 
 } = require("../controllers/orderController");
 
@@ -55,7 +56,8 @@ router.get("/driver/:id", getOrdersByDriver);
 // ==========================
 // Out For Delivery
 // ==========================
-
+// Verify Delivery OTP
+router.put("/verify-otp/:id", verifyOTP);
 router.put("/out-for-delivery/:id", outForDelivery);
 
 module.exports = router;
