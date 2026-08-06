@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Settings</title>
+
+<link rel="stylesheet" href="payment-settings.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>
+            Payment Settings
+        </h1>
+
+        <p class="subtitle">
+            Add your UPI ID and QR Code for receiving retailer payments.
+        </p>
+
+        <form id="paymentForm">
+
+            <label>
+                UPI ID
+            </label>
+
+            <input
+                type="text"
+                id="upiId"
+                placeholder="Enter Your UPI ID">
+
+            <label>
+                Upload QR Code
+            </label>
+
+            <input
+                type="file"
+                id="qrCode"
+                accept="image/*">
+
+            <div class="preview">
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="QR Preview">
+
+            </div>
+
+            <button type="submit">
+
+                <i class="fas fa-save"></i>
+
+                Save Payment Details
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="payment-settings.js"></script>
+
+</body>
+
+</html>
