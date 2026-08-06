@@ -1,95 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>driver Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="driver dashboard.css">
+<title>Driver Dashboard</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="driver dashboard.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
 </head>
+
+
 <body>
-    <div class="main">
-    <input type="checkbox" id="check">
 
-    <div class="btnOne">
-        <label for="check">
-            <i class="fas fa-bars"></i>
-        </label>
-    </div>
 
-    <div class="sidebar">
+<div class="main">
 
-        <div class="logo">
-            <a href="">B2B Wala</a>
-        </div>
 
-        <div class="btnTwo">
-            <label for="check">
-                <i class="fas fa-times"></i>
-            </label>
-        </div>
+<input type="checkbox" id="check">
 
-        <div class="menu">
 
-            <ul>
+
+<!-- Topbar -->
+
+<div class="topbar">
+
+
+<div class="top-logo">
+
+B2B Wala
+
+</div>
+
+
+
+<div class="driver-status">
+
+<i class="fas fa-circle"></i>
+
+Available
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Menu Button -->
+
+<div class="btnOne">
+
+<label for="check">
+
+<i class="fas fa-bars"></i>
+
+</label>
+
+</div>
+
+
+
+
+
+
+<!-- Sidebar -->
+
+
+<div class="sidebar">
+
+
+<div class="logo">
+
+<a href="#">
+B2B Wala
+</a>
+
+</div>
+
+
+
+
+<div class="btnTwo">
+
+<label for="check">
+
+<i class="fas fa-times"></i>
+
+</label>
+
+</div>
+
+
+
+
+
+
+<div class="menu">
+
+
+<ul>
+
 
 <li>
+
 <i class="fas fa-home"></i>
-<a href="#">Dashboard</a>
+
+<a href="driver-dashboard.html">
+Dashboard
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-truck"></i>
-<a href="#">Today's Deliveries</a>
+
+<a href="#">
+Today's Deliveries
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-map-marker-alt"></i>
-<a href="#">Delivery Route</a>
+
+<a href="#">
+Delivery Route
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-box"></i>
-<a href="driver-orders.html">Assigned Orders</a>
+
+<a href="driver-orders.html">
+Assigned Orders
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-check-circle"></i>
-<a href="#">Delivered Orders</a>
+
+<a href="#">
+Delivered Orders
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-clock"></i>
-<a href="#">Pending Deliveries</a>
+
+<a href="#">
+Pending Deliveries
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-user"></i>
-<a href="#">Profile</a>
+
+<a href="#">
+Profile
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-cog"></i>
-<a href="#">Settings</a>
+
+<a href="#">
+Settings
+</a>
+
 </li>
 
+
+
+
 <li>
+
 <i class="fas fa-sign-out-alt"></i>
-<a href="index.html">Logout</a>
+
+<a href="index.html">
+Logout
+</a>
+
 </li>
+
+
 
 </ul>
 
-        </div>
-
-    </div>
 
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Dashboard Content -->
+
+
+<div class="dashboard-content">
+
+
+<h1>
+Welcome Driver 👋
+</h1>
+
+
+
+
+<div class="dashboard-cards">
+
+
+
+<div class="card">
+
+<h3>
+Assigned Orders
+</h3>
+
+<h2>
+12
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+Pending Delivery
+</h3>
+
+<h2>
+5
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+Delivered Orders
+</h3>
+
+<h2>
+7
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+Today's Earnings
+</h3>
+
+<h2>
+₹1500
+</h2>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="recent-orders">
+
+
+<h2>
+Today's Delivery
+</h2>
+
+
+<table>
+
+
+<tr>
+
+<th>
+Retailer
+</th>
+
+<th>
+Address
+</th>
+
+<th>
+Product
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Mahadev Kirana
+</td>
+
+<td>
+Chinchwad
+</td>
+
+<td>
+Frooti 600 ML
+</td>
+
+<td>
+Out For Delivery
+</td>
+
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Ganesh Store
+</td>
+
+<td>
+Pune
+</td>
+
+<td>
+Sprite 2L
+</td>
+
+<td>
+Delivered
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+<div class="recent-orders">
+
+
+<h2>
+Delivery History
+</h2>
+
+
+<table>
+
+
+<tr>
+
+<th>
+Date
+</th>
+
+<th>
+Orders
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+06-08-2026
+</td>
+
+<td>
+5 Orders
+</td>
+
+<td>
+Completed
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
 </body>
+
 </html>
