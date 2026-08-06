@@ -31,7 +31,9 @@
     justify-content:space-between;
     padding:0 30px;
     box-shadow:0 2px 10px rgba(0,0,0,0.2);
-
+    position:relative;
+    z-index:10;
+    
 }
 
 
@@ -174,10 +176,11 @@ display:none;
 
     color:white;
     font-size:30px;
-    position:absolute;
+    position:fixed;
     left:16px;
-    top:20px;
+    top:85px;
     cursor:pointer;
+    z-index:2000;
 
 }
 
