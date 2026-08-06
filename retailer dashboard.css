@@ -189,3 +189,115 @@ border-radius:25px;
 cursor:pointer;
 
 }
+/* Dashboard Content */
+
+.dashboard-content{
+
+    padding:40px;
+    margin-left:0;
+    color:white;
+
+}
+
+
+.dashboard-content h1{
+
+    font-size:32px;
+    margin-bottom:30px;
+
+}
+
+
+
+/* Cards */
+
+.dashboard-cards{
+
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+
+}
+
+
+
+.card{
+
+    background:white;
+    color:#333;
+    width:220px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+
+
+.card h3{
+
+    font-size:18px;
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    font-size:30px;
+    font-weight:bold;
+    color:#007bff;
+
+}
+
+
+
+
+
+/* Recent Orders */
+
+.recent-orders{
+
+    margin-top:40px;
+    background:white;
+    color:#333;
+    padding:25px;
+    border-radius:15px;
+
+}
+
+
+.recent-orders h2{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.recent-orders table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+
+.recent-orders th{
+
+    background:#007bff;
+    color:white;
+    padding:12px;
+
+}
+
+
+.recent-orders td{
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
