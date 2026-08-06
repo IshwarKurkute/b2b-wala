@@ -195,8 +195,9 @@ cursor:pointer;
 .dashboard-content{
 
     padding:40px;
-    margin-left:0;
-    color:white;
+    margin-top:70px;
+    margin-left:30;
+    color:#333;
 
 }
 
@@ -217,6 +218,7 @@ cursor:pointer;
     display:flex;
     gap:25px;
     flex-wrap:wrap;
+    margin-left:10px;
 
 }
 
