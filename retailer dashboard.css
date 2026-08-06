@@ -140,3 +140,52 @@
 #check:checked~.sidebar .btnTwo i {
     opacity: 1;
 }
+.topbar{
+
+height:70px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+box-shadow:0 2px 10px #ddd;
+
+}
+
+
+.topbar .logo{
+
+font-size:25px;
+font-weight:bold;
+
+}
+
+
+.search-box{
+
+display:flex;
+gap:10px;
+
+}
+
+
+.search-box input{
+
+width:250px;
+padding:12px 20px;
+border-radius:25px;
+border:1px solid #ccc;
+
+}
+
+
+.search-box button{
+
+border:none;
+background:#007bff;
+color:white;
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+
+}
