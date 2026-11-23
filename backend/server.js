@@ -16,7 +16,6 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -35,7 +34,7 @@ app.use("/api/payments", paymentRoutes);
 // Test
 app.get("/", (req, res) => {
 
-    res.send("🚀 B2B Wala Backend Running");
+    res.send(" B2B Wala Backend Running");
 
 });
 
@@ -45,6 +44,6 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
 
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(` Server running on port ${PORT}`);
 
 });
